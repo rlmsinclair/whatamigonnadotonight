@@ -36,7 +36,10 @@ tbody tr:hover {
   table {
     width: 100%;
   }
-  th, td {
+  thead th, tbody td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
     font-size: 20px;
     padding: 10px;
   }
