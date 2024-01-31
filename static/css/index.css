@@ -33,10 +33,10 @@ tbody tr:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-    font-size: 25px;
-}
+    thead th, tbody td {
+        font-size: 25px;
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
 }
