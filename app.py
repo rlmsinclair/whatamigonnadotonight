@@ -114,7 +114,7 @@ def login():
             login_user(user)
             return redirect(url_for('home'))
 
-        if user.is_confirmed is False:
+        if user and is_valid and user.is_confirmed is False:
             msg = Message(subject='WhatAmIGonnaDoTonight Verification',
                           sender='support@voteforproduct.com',  # Replace with your Gmail address
                           recipients=[email])  # Replace with your Gmail address
