@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <h2>Register</h2>
+    <h3>You must use an email address that ends in exeter.ac.uk to register!</h3>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="post">
+        {{ form.csrf_token }}
+        <label for="email">Email:</label>
+        {{ form.email }}
+        {% if form.email.errors %}
+          <ul class="errors">
+            {% for error in form.email.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <br>
+        <label for="password">Password:</label>
+        {{ form.password }}
+        {% if form.password.errors %}
+          <ul class="errors">
+            {% for error in form.password.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <br>
+        <label for="confirm_password">Confirm Password:</label>
+        {{ form.confirm_password }}
+        {% if form.confirm_password.errors %}
+          <ul class="errors">
+            {% for error in form.confirm_password.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <br>
+        <input type="submit" value="Register">
+    </form>
+<br>
+<a href = '/login'>Log in here</a>
+
+</html>
